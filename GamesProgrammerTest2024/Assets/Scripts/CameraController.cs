@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
 
         Vector3 newPosition = transform.position + move;
 
-        // Limit the camera position within specified boundaries
+        // Batas Possi Kamera
         newPosition.x = Mathf.Clamp(newPosition.x, -boundary, boundary);
         newPosition.y = Mathf.Clamp(newPosition.y, -boundary, boundary);
 

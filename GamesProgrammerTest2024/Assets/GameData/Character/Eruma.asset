@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6228304a36b16fa4c9035d459a1f6aaf, type: 3}
+  m_Name: Eruma
+  m_EditorClassIdentifier: 
+  nameChar: Eruma
+  typeChar: 2
+  artWorkChar: {fileID: 21300000, guid: cb0c9484652dffe49955f126cb34694d, type: 3}
+  hpStats: 14
+  atkStats: 8
+  defStats: 12
+  resStats: 2
+  characterPrefab: {fileID: 4392512971604770581, guid: e97a4bd9f8107864c8a43e2cac453c64, type: 3}

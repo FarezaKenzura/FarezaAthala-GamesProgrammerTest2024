@@ -39,17 +39,14 @@ public class MainMenu : MonoBehaviour
 
         switch (currentState)
         {
-            case MenuState.Start: 
-                Debug.Log("Start"); 
+            case MenuState.Start:  
                 SceneManager.LoadScene("SetParty");
                 break;
             case MenuState.Credits: 
-                Debug.Log("Credits"); 
                 EnablePanel(creditsPanel); 
                 DisablePanel(mainMenuPanel);
                 break;
             case MenuState.Exit: 
-                Debug.Log("Exit"); 
                 Application.Quit(); 
                 break;
         }

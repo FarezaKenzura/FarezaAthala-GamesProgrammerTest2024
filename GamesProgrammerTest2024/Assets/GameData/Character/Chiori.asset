@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6228304a36b16fa4c9035d459a1f6aaf, type: 3}
+  m_Name: Chiori
+  m_EditorClassIdentifier: 
+  nameChar: Chiori
+  typeChar: 0
+  artWorkChar: {fileID: 21300000, guid: 5294b601c8a8255409bf56082aad340a, type: 3}
+  hpStats: 19
+  atkStats: 15
+  defStats: 7
+  resStats: 5
+  characterPrefab: {fileID: 5421812856237455837, guid: 0e685df7754cd464d9096d7d03638fd6, type: 3}
