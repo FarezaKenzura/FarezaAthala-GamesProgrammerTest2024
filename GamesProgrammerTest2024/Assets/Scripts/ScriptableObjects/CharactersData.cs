@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewCharacterData", menuName = "Scriptable Object/Character Data")]
+[CreateAssetMenu(fileName = "NewCharacterData", menuName = "Scriptable Objects/Character Data")]
 public class CharactersData : ScriptableObject
 {
     [Header("Informations")]
