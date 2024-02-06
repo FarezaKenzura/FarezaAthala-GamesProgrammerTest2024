@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Bruce
   m_EditorClassIdentifier: 
   nameChar: Bruce
-  typeChar: 0
-  artWorkChar: {fileID: 21300000, guid: 419ad29e2bd093f4aa3e4baef4e4418d, type: 3}
+  artWorkChar: {fileID: -1742015725, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
+  movementType: 1
+  attackType: 0
   hpStats: 20
   atkStats: 8
   defStats: 12

@@ -23,7 +23,6 @@ public class TutorialManager : MonoBehaviour
         btnNext.onClick.AddListener(NextTutorial);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         SetUpTutorial();

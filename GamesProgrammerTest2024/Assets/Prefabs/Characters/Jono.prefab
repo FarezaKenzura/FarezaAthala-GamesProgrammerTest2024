@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5169011170092945045}
   - component: {fileID: 1622158151313145303}
+  - component: {fileID: 2878667281241573805}
   m_Layer: 0
   m_Name: Jono
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 88007744, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
   m_Color: {r: 0, g: 1, b: 0.7137255, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2878667281241573805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286974420770008815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426bcc6e645612943a1ecaf0525bb45d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: ea9731e1f033ff5499ec62e5a9e8db02, type: 2}

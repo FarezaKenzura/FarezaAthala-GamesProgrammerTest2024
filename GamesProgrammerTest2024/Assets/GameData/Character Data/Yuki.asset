@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Yuki
   m_EditorClassIdentifier: 
   nameChar: Yuki
-  typeChar: 2
-  artWorkChar: {fileID: 21300000, guid: 5294b601c8a8255409bf56082aad340a, type: 3}
+  artWorkChar: {fileID: 224941661, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
+  movementType: 1
+  attackType: 1
   hpStats: 12
   atkStats: 19
   defStats: 6

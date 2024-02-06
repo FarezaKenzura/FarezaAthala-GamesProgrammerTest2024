@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1328902473706142053}
   - component: {fileID: 6394364390673997853}
+  - component: {fileID: 3640864131036632377}
   m_Layer: 0
   m_Name: Eruma
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -230757224, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
   m_Color: {r: 0.36862746, g: 0.33333334, b: 0.33333334, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3640864131036632377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4392512971604770581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57774ff9b37563044b86ae639167f49b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: af956d8fccfbe854594b35782ba43dd4, type: 2}

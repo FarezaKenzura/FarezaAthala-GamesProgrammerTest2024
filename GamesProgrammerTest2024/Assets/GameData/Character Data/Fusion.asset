@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Fusion
   m_EditorClassIdentifier: 
   nameChar: Fusion
-  typeChar: 2
-  artWorkChar: {fileID: 21300000, guid: cb0c9484652dffe49955f126cb34694d, type: 3}
+  artWorkChar: {fileID: -36016439, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
+  movementType: 0
+  attackType: 1
   hpStats: 18
   atkStats: 11
   defStats: 6

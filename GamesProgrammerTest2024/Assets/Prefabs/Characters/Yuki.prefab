@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7440061174582717263}
   - component: {fileID: 3030668790169110951}
+  - component: {fileID: -5970222480873780622}
   m_Layer: 0
   m_Name: Yuki
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 224941661, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
   m_Color: {r: 0.8509804, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5970222480873780622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4759816196475361690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b00800eb291c0147a28634ba4a403f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: a0bc83380eab27a468aeb3e6f7fa6d90, type: 2}

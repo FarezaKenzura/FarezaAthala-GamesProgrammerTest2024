@@ -4,36 +4,68 @@ using UnityEngine;
 
 public class GameMapManager : MonoBehaviour
 {
-    [Header("Map")]
-    public Vector2Int size;
-    public Vector2 offsetTile;
-    public Vector2 offsetBoard;
-    
-    public GameObject tilePrefab;
+    public static GameMapManager Instance;
+    [SerializeField] private int width, height;
 
-    void Start()
+    [SerializeField] private Tile forestTile, mountainTile, plainsTile, ruinsTile;
+    [SerializeField] private Transform centerPoint;
+
+    private Dictionary<Vector2, Tile> tiles;
+
+    void Awake()
     {
-        GenerateMap();
+        Instance = this;
     }
 
-    void GenerateMap()
+    public void GenerateMap()
     {
-        for (int x = 0; x < size.x; x++)
+        Vector3 centerPosition = centerPoint.position;
+        Vector3 offset = new Vector3(-(width - 1) / 2f, -(height - 1) / 2f, 0);
+
+        tiles = new Dictionary<Vector2, Tile>();
+
+        for (int x = 0; x < width; x++)
         {
-            for (int y = 0; y < size.y; y++)
+            for (int y = 0; y < height; y++)
             {
-                Vector2 tilePosition = new Vector2(x * offsetTile.x, y * offsetTile.y) + offsetBoard;
+                Vector3 tilePosition = centerPosition + new Vector3(x, y, 0) + offset;
 
-                // Instantiate your tile prefab at 'tilePosition' and set the current object as the parent
-                GameObject tile = Instantiate(tilePrefab, tilePosition, Quaternion.identity, this.gameObject.transform);
+                int randomIndex = Random.Range(0, 4);
+                Tile randomTile = null;
 
-                // Set a different color for each tile based on its position
-                Color tileColor = new Color(x / (float)size.x, y / (float)size.y, 1f);
-                tile.GetComponent<Renderer>().material.color = tileColor;
+                switch (randomIndex)
+                {
+                    case 0:
+                        randomTile = forestTile;
+                        break;
+                    case 1:
+                        randomTile = mountainTile;
+                        break;
+                    case 2:
+                        randomTile = plainsTile;
+                        break;
+                    case 3:
+                        randomTile = ruinsTile;
+                        break;
+                }
 
-                // Set a name for the tile based on its position
-                tile.name = $"Tile_{x}_{y}";
+                var spawnedTile = Instantiate(randomTile, tilePosition, Quaternion.identity);
+                spawnedTile.name = $"Tile {x} {y}";
+
+                spawnedTile.Init(x, y);
+
+                tiles[new Vector2(x, y)] = spawnedTile;
             }
         }
+
+        GameManager.Instance.ChangeState(GameState.SpawnCharacters);
+    }
+
+    public Tile GetTileAtPosition(Vector2 pos)
+    {
+        if(tiles.TryGetValue(pos, out var tile)){
+            return tile;
+        }
+        return null;
     }
 }
