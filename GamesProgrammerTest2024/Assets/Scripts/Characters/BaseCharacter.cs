@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public abstract class BaseCharacter : MonoBehaviour
@@ -11,6 +13,11 @@ public abstract class BaseCharacter : MonoBehaviour
     protected int CurrentAttack { get; private set; }
     protected int CurrentDefense { get; private set; }
     protected int CurrentResistance { get; private set; }
+
+    public OverlayTile standingOnTile;
+
+    public GameObject popUpPrefabs;
+    public TMP_Text damageText;
 
     protected virtual void Start()
     {
@@ -37,6 +44,11 @@ public abstract class BaseCharacter : MonoBehaviour
         // Apply damage to character
         CurrentHP -= totalPhysicalDamage;
         CurrentHP -= totalMagicalDamage;
+
+        damageText.text = physicalDamage.ToString();
+        damageText.text = magicalDamage.ToString(); 
+
+        Instantiate(popUpPrefabs, transform.position, quaternion.identity);
 
         // Check if the character is defeated
         if (CurrentHP <= 0)

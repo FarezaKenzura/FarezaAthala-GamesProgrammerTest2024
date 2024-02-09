@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chiori
   m_EditorClassIdentifier: 
   nameChar: Chiori
-  artWorkChar: {fileID: 1086120167, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
+  artWorkChar: {fileID: -1916714831, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
   movementType: 2
   attackType: 1
   hpStats: 19

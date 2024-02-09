@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   public static GameManager Instance;
+    public static GameManager Instance;
     public GameState GameState;
 
     void Awake()
@@ -24,13 +24,11 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.GenerateMap:
-                GameMapManager.Instance.GenerateMap();
-                break;
-            case GameState.SpawnCharacters:
-                //UnitManager.Instance.SpawnHeroes();
+                MapManager.instance.GenerateMap();
                 break;
             case GameState.SpawnEnemies:
-                //UnitManager.Instance.SpawnEnemies();
+                break;
+            case GameState.SpawnCharacters:
                 break;
             case GameState.CharactersTurn:
                 break;

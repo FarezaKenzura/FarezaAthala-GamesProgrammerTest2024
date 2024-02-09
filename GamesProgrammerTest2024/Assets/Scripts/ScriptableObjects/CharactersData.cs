@@ -11,7 +11,6 @@ public class CharactersData : ScriptableObject
     public MovementType movementType;
     public enum AttackType { Physical, Magical }
     public AttackType attackType;
-
     
     [Header("Statistics")]
     public int hpStats;

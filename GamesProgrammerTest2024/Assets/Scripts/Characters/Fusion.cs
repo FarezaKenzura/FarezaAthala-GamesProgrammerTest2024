@@ -6,7 +6,7 @@ public class Fusion : BaseCharacter
 {
     public override void Attack()
     {
-        throw new System.NotImplementedException();
+        TakeDamage(0, 12);
     }
 
     public override void Wait()
