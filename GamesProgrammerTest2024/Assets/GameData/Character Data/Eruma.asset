@@ -16,8 +16,8 @@ MonoBehaviour:
   artWorkChar: {fileID: 867935163, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
   movementType: 1
   attackType: 0
-  hpStats: 14
-  atkStats: 8
+  hpStats: 15
+  atkStats: 17
   defStats: 12
   resStats: 2
   characterPrefab: {fileID: 4392512971604770581, guid: e97a4bd9f8107864c8a43e2cac453c64, type: 3}

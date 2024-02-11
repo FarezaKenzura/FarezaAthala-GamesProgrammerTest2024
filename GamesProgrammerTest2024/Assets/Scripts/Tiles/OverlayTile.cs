@@ -14,6 +14,13 @@ public class OverlayTile : MonoBehaviour
     public Vector3Int gridLocation;
     public Vector2Int grid2DLocation {get { return new Vector2Int(gridLocation.x, gridLocation.y); } }
 
+    private void Start()
+    {
+        Vector3 newPosition = transform.position;
+        newPosition.z = -1f;
+        transform.position = newPosition;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76aaeed216501164f8d04c1469a15885, type: 3}
+  m_Name: Tutorial Move Character
+  m_EditorClassIdentifier: 
+  Data:
+  - ContentTutor: "Karaktermu siap beraksi! Gunakan tombol panah untuk menggerakkannya.\r"
+    PictureTutor: {fileID: 0}
+  - ContentTutor: "Klik Tile Putih karaktermu untuk menavigasikannya melalui petak-petak\r"
+    PictureTutor: {fileID: 0}

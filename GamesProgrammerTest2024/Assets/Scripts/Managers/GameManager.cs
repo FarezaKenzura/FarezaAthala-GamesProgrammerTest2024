@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameState GameState;
 
+    public TutorialManager tutorialManager;
+    [SerializeField] private TutorialData dataEnemySpawn, dataPlayerSpawn, dataPlayerTurn;
+
     void Awake()
     {
         Instance = this;
@@ -24,15 +27,15 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.GenerateMap:
-                MapManager.instance.GenerateMap();
                 break;
             case GameState.SpawnEnemies:
+                tutorialManager.SetUpTutorial(dataEnemySpawn);
                 break;
             case GameState.SpawnCharacters:
+                tutorialManager.SetUpTutorial(dataPlayerSpawn);
                 break;
             case GameState.CharactersTurn:
-                break;
-            case GameState.EnemiesTurn:
+                tutorialManager.SetUpTutorial(dataPlayerTurn);
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -46,5 +49,4 @@ public enum GameState
     SpawnCharacters,
     SpawnEnemies,
     CharactersTurn,
-    EnemiesTurn
 }

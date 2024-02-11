@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewTutorialData", menuName = "Scriptable Objects/Tutorial Data", order = 1)]
+[CreateAssetMenu(fileName = "NewTutorialData", menuName = "Scriptable Objects/Tutorial Data", order = 2)]
 public class TutorialData : ScriptableObject
 {
     public Tutorial[] Data;

@@ -17,7 +17,7 @@ MonoBehaviour:
   movementType: 1
   attackType: 0
   hpStats: 20
-  atkStats: 8
+  atkStats: 18
   defStats: 12
   resStats: 3
   characterPrefab: {fileID: 2670464721210960784, guid: 142a52d14051c754aa759bf38ee4e504, type: 3}

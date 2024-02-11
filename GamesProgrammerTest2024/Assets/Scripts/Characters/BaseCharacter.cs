@@ -16,8 +16,8 @@ public abstract class BaseCharacter : MonoBehaviour
 
     public OverlayTile standingOnTile;
 
-    public GameObject popUpPrefabs;
-    public TMP_Text damageText;
+    //public GameObject popUpPrefabs;
+    //public TMP_Text damageText;
 
     protected virtual void Start()
     {
@@ -32,25 +32,26 @@ public abstract class BaseCharacter : MonoBehaviour
         CurrentResistance = characterData.resStats;
     }
 
-    public abstract void Attack();
-    public abstract void Wait();
-
     public virtual void TakeDamage(int physicalDamage, int magicalDamage)
     {
-        // Calculate damage based on defense and resistance
         int totalPhysicalDamage = Mathf.Max(0, physicalDamage - CurrentDefense);
         int totalMagicalDamage = Mathf.Max(0, magicalDamage - CurrentResistance);
 
-        // Apply damage to character
         CurrentHP -= totalPhysicalDamage;
         CurrentHP -= totalMagicalDamage;
 
-        damageText.text = physicalDamage.ToString();
-        damageText.text = magicalDamage.ToString(); 
+        /*if (totalPhysicalDamage > 0)
+        {
+            damageText.text = totalPhysicalDamage.ToString();
+            Instantiate(popUpPrefabs, transform.position, Quaternion.identity);
+        }
 
-        Instantiate(popUpPrefabs, transform.position, quaternion.identity);
+        if (totalMagicalDamage > 0)
+        {
+            damageText.text = totalMagicalDamage.ToString();
+            Instantiate(popUpPrefabs, transform.position, Quaternion.identity);
+        }*/
 
-        // Check if the character is defeated
         if (CurrentHP <= 0)
         {
             Destroy(gameObject);

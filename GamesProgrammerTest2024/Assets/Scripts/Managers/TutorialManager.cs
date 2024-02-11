@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] private TutorialData datatutorial;
-    
     [Header("UI")]
     [SerializeField] private GameObject cnvsTutorial;
     
@@ -16,6 +14,9 @@ public class TutorialManager : MonoBehaviour
 
     [SerializeField] private Button btnNext;
 
+    [Header("Data")]
+
+    private TutorialData currentTutorialData;
     private int index;
 
     private void Awake()
@@ -23,41 +24,36 @@ public class TutorialManager : MonoBehaviour
         btnNext.onClick.AddListener(NextTutorial);
     }
 
-    void Start()
-    {
-        SetUpTutorial();
-    }
-
-    private void SetUpTutorial()
+    public void SetUpTutorial(TutorialData data)
     {
         cnvsTutorial.SetActive(true);
+        currentTutorialData = data;
         index = 0;
         NextTutorial();
     }
 
     private void NextTutorial()
     {
-        if (index < datatutorial.Data.Length)
+        if (currentTutorialData != null && index < currentTutorialData.Data.Length)
         {
-            txttutorial.SetText(datatutorial.Data[index].ContentTutor);
+            txttutorial.SetText(currentTutorialData.Data[index].ContentTutor);
 
-            if (datatutorial.Data[index].PictureTutor != null)
+            if (currentTutorialData.Data[index].PictureTutor != null)
             {
-                imgTutorial.sprite = datatutorial.Data[index].PictureTutor;
+                imgTutorial.sprite = currentTutorialData.Data[index].PictureTutor;
                 imgTutorial.enabled = true;
             }
             else
             {
                 imgTutorial.enabled = false;
             }
-            
+
             index++;
         }
         else
         {
             EndTutorial();
         }
-        
     }
 
     private void EndTutorial()

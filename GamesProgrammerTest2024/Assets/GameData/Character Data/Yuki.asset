@@ -16,7 +16,7 @@ MonoBehaviour:
   artWorkChar: {fileID: 973247133, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
   movementType: 1
   attackType: 1
-  hpStats: 12
+  hpStats: 16
   atkStats: 19
   defStats: 6
   resStats: 1

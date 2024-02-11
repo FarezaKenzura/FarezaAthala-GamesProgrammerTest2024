@@ -13,7 +13,7 @@ public class MapManager : MonoBehaviour
     public GameObject overlayContainer;
 
     public Dictionary<Vector2Int, OverlayTile> map;
-    //public bool ignoreBottomTiles;
+    public bool ignoreBottomTiles;
 
     private void Awake()
     {
@@ -48,8 +48,8 @@ public class MapManager : MonoBehaviour
                 {
                     for (int x = bounds.min.x; x < bounds.max.x; x++)
                     {
-                        /*if (z == 0 && ignoreBottomTiles)
-                            return;*/
+                        if (z == 0 && ignoreBottomTiles)
+                            return;
 
                         if (tm.HasTile(new Vector3Int(x, y, z)))
                         {

@@ -8,6 +8,7 @@ public class MouseController : MonoBehaviour
     public GameObject cursor;
     public float speed;
     public CharactersManager charactersManager;
+    public EnemyManager enemyManager;
     private BaseCharacter character;
 
     private PathFinder pathFinder;
@@ -34,8 +35,11 @@ public class MouseController : MonoBehaviour
         if(hit.HasValue)
         {
             OverlayTile tile = hit.Value.collider.gameObject.GetComponent<OverlayTile>();
-            cursor.transform.position = tile.transform.position;
-            cursor.gameObject.GetComponent<SpriteRenderer>().sortingOrder = tile.GetComponent<SpriteRenderer>().sortingOrder; 
+            if (tile != null)
+            {
+                cursor.transform.position = new Vector3(tile.transform.position.x, tile.transform.position.y, tile.transform.position.z - 2);
+                cursor.gameObject.GetComponent<SpriteRenderer>().sortingOrder = tile.GetComponent<SpriteRenderer>().sortingOrder;
+            }
 
             if (rangeFinderTiles.Contains(tile) && !isMoving)
             {
@@ -48,26 +52,48 @@ public class MouseController : MonoBehaviour
 
                 if (character == null)
                 {
-                    CharactersData characterData = charactersManager.GetSelectedCharacterData(); // Dapatkan data karakter yang dipilih
-                    character = Instantiate(characterData.characterPrefab).GetComponent<BaseCharacter>(); // Instantiante karakter berdasarkan data yang dipilih
+                    CharactersData characterData = charactersManager.GetSelectedCharacterData();
+                    character = Instantiate(characterData.characterPrefab).GetComponent<BaseCharacter>();
+                    //tile.gameObject.GetComponent<OverlayTile>().HideTile();
                     PositionCharacterOnLine(tile);
                     GetInRangeTiles();
+
+                    GameManager.Instance.ChangeState(GameState.CharactersTurn);
+                    charactersManager.CvnsCharcter.SetActive(false);
                 }
                 else
                 {
+                    Debug.Log("Move 1");
                     isMoving = true;
                     tile.gameObject.GetComponent<OverlayTile>().HideTile();
                 }
             }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+
+                if (GameManager.Instance.GameState == GameState.SpawnEnemies)
+                {
+                    enemyManager.InitializeEnemy(tile);
+                    GameManager.Instance.ChangeState(GameState.SpawnCharacters);
+                }
+            }
+        }
+        else
+        {
+            if (character != null)
+            {
+                GetInRangeTiles();
+            }
         }
 
-        if (path.Count > 0 && isMoving)
+        if (isMoving && path.Count > 0)
         {
             MoveAlongPath();
         }
     }
 
-    private void GetInRangeTiles()
+    public void GetInRangeTiles()
     {
         rangeFinderTiles = rangeFinder.GetTileInRange(new Vector2Int(character.standingOnTile.gridLocation.x, character.standingOnTile.gridLocation.y), 2);
 
@@ -99,9 +125,9 @@ public class MouseController : MonoBehaviour
 
     }
 
-    private void PositionCharacterOnLine(OverlayTile tile)
+    public void PositionCharacterOnLine(OverlayTile tile)
     {
-        character.transform.position = new Vector3(tile.transform.position.x, tile.transform.position.y + 0.0001f, tile.transform.position.z);
+        character.transform.position = new Vector3(tile.transform.position.x, tile.transform.position.y + 0.0001f, tile.transform.position.z - 1);
         character.GetComponent<SpriteRenderer>().sortingOrder = tile.GetComponent<SpriteRenderer>().sortingOrder;
         character.standingOnTile = tile;
     }

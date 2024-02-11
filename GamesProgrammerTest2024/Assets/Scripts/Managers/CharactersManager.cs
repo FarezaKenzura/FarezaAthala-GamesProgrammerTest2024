@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class CharactersManager : MonoBehaviour
 {
     public CharStats[] charStats;
+    public GameObject CvnsCharcter;
     
     private CharactersData selectedCharacterData;
     public CharactersData GetSelectedCharacterData() { return selectedCharacterData; }

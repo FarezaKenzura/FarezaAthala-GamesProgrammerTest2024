@@ -5,18 +5,14 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    // Enum to define different states
     public enum MenuState
     {
         Start,
         Credits,
         Exit
     }
-
-    // Current state variable
     private MenuState currentState;
 
-    // UI buttons for Main Menu
     [Header("UI Button")]
     public Button startButton;
     public Button creditsButton;
@@ -54,6 +50,7 @@ public class MainMenu : MonoBehaviour
     private void StartMenu()
     {
         SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1f;
     }
 
     private void CreditsMenu()

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Bruce : BaseCharacter
 {
-    public override void Attack()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        throw new System.NotImplementedException();
-    }
-
-    public override void Wait()
-    {
-        throw new System.NotImplementedException();
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            BaseEnemy enemyCharacter = other.gameObject.GetComponent<BaseEnemy>();
+            if (enemyCharacter != null)
+            {
+                Debug.Log("Player menyerang musuh!");
+                enemyCharacter.TakeDamage(CurrentAttack, 0);
+            }
+        }
     }
 }

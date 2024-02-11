@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76aaeed216501164f8d04c1469a15885, type: 3}
-  m_Name: Tutorial Set Party
+  m_Name: Tutorial Spawn Enemies
   m_EditorClassIdentifier: 
   Data:
-  - ContentTutor: wqeeqeqeqeqeqweewqeqwe
+  - ContentTutor: Tekan Mouse Klik Kanan untuk memunculkan musuh pada tile yang ditunjukkan.
     PictureTutor: {fileID: 0}
-  - ContentTutor: ewqeeeeeeeeeeeeeeeeeeeeeee
-    PictureTutor: {fileID: 21300000, guid: 5294b601c8a8255409bf56082aad340a, type: 3}
