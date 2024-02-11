@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class MouseController : MonoBehaviour
 {
+    [Header("Controller")]
     public GameObject cursor;
     public float speed;
     public CharactersManager charactersManager;
     public EnemyManager enemyManager;
     private BaseCharacter character;
 
+    [Header("Tile")]
     private PathFinder pathFinder;
     private RangeFinder rangeFinder;
     private List<OverlayTile> path;
@@ -63,7 +65,6 @@ public class MouseController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Move 1");
                     isMoving = true;
                     tile.gameObject.GetComponent<OverlayTile>().HideTile();
                 }

@@ -11,7 +11,6 @@ public class Jono : BaseCharacter
             BaseEnemy enemyCharacter = other.gameObject.GetComponent<BaseEnemy>();
             if (enemyCharacter != null)
             {
-                Debug.Log("Player menyerang musuh!");
                 enemyCharacter.TakeDamage(CurrentAttack, 0);
             }
         }

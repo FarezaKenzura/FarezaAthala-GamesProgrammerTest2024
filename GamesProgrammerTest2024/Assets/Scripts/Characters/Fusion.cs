@@ -11,7 +11,6 @@ public class Fusion : BaseCharacter
             BaseEnemy enemyCharacter = other.gameObject.GetComponent<BaseEnemy>();
             if (enemyCharacter != null)
             {
-                Debug.Log("Player menyerang musuh!");
                 enemyCharacter.TakeDamage(0, CurrentAttack);
             }
         }

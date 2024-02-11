@@ -6,9 +6,8 @@ using UnityEngine;
 
 public abstract class BaseCharacter : MonoBehaviour
 {
+    [Header("Current Stats")]
     public CharactersData characterData;
-
-    // Current stats during battle
     protected int CurrentHP { get; private set; }
     protected int CurrentAttack { get; private set; }
     protected int CurrentDefense { get; private set; }
@@ -16,6 +15,7 @@ public abstract class BaseCharacter : MonoBehaviour
 
     public OverlayTile standingOnTile;
 
+    //[Header("Pop Up Damage")]
     //public GameObject popUpPrefabs;
     //public TMP_Text damageText;
 

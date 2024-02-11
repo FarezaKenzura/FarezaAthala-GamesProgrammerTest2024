@@ -6,15 +6,16 @@ using Unity.Mathematics;
 
 public abstract class BaseEnemy : MonoBehaviour
 {
+    [Header("Current Stats")]
     public EnemyData enemyData;
-
     protected int CurrentHP { get; private set; }
     protected int CurrentAttack { get; private set; }
     protected int CurrentDefense { get; private set; }
     protected int CurrentResistance { get; private set; }
 
     public OverlayTile standingOnTile;
-
+    
+    [Header("Pop Up Damage")]
     public GameObject popUpPrefabs;
     public TMP_Text damageText;
 
